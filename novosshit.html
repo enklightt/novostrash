@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVOS | MUSOR</title>
+    <link rel="stylesheet" href="novostrash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="soundcloud-theme">
+<div class="noise-overlay"></div>
+<div class="container">
+    <header>
+        <div class="logo-container">
+            <i class="fab fa-soundcloud"></i>
+            <h1>NOVOS <span class="highlight">MUSOR</span></h1>
+        </div>
+        <p class="subtitle">НАЙДИ ВСЕ <span class="easter-egg-counter">0</span>/7 ПАСХАЛОК</p>
+    </header>
+
+    <div class="team-grid">
+        <div class="team-member" data-secret="music">
+            <div class="photo-container">
+                <img src="oleg.jpg" alt="Член команды 1">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-music"></i></div>
+                </div>
+            </div>
+            <h2>АЛЕГ</h2>
+            <p class="member-title">BANANA MASTER</p>
+        </div>
+
+        <div class="team-member" data-secret="game">
+            <div class="photo-container">
+                <img src="purik.jpg" alt="Член команды 2">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-gamepad"></i></div>
+                </div>
+            </div>
+            <h2>ПУРИК</h2>
+            <p class="member-title">RAGE MACHINE</p>
+        </div>
+
+        <div class="team-member" data-secret="code">
+            <div class="photo-container">
+                <img src="sonia.jpg" alt="Член команды 3">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                </div>
+            </div>
+            <h2>СОНЯ</h2>
+            <p class="member-title">REVO QUEEN</p>
+        </div>
+
+        <div class="team-member" data-secret="camera">
+            <div class="photo-container">
+                <img src="ipad.jpg" alt="Член команды 4">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-camera"></i></div>
+                </div>
+            </div>
+            <h2>АЙПАДИК</h2>
+            <p class="member-title">TECH FLEXER</p>
+        </div>
+
+        <div class="team-member" data-secret="palette">
+            <div class="photo-container">
+                <img src="maxim.jpg" alt="Член команды 5">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-palette"></i></div>
+                </div>
+            </div>
+            <h2>МАКСИМКА</h2>
+            <p class="member-title">BUNNY LOVER</p>
+        </div>
+
+        <div class="team-member" data-secret="bulb">
+            <div class="photo-container">
+                <img src="nikita.jpg" alt="Член команды 6">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                </div>
+            </div>
+            <h2>НИКИТОС</h2>
+            <p class="member-title">DEAD INSIDE</p>
+        </div>
+    </div>
+
+    <div class="easter-egg-found hidden">
+        <div class="egg-content">
+            <h3>ПАСХАЛКА НАЙДЕНА!</h3>
+            <p class="easter-egg-message"></p>
+            <div class="egg-emoji">🔥</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wave-container">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <p>NOVOS <span class="heart">♥</span> MUSOR</p>
+        <div class="secret-button" data-secret="footer-secret">
+            <i class="fas fa-crown hidden-crown"></i>
+        </div>
+    </footer>
+</div><!-- Quiz Modal -->
+<div id="team-quiz" class="quiz-modal">
+    <div class="quiz-content">
+        <span class="quiz-close">&times;</span>
+        <h2>🎯 Командна Вікторина</h2>
+        <div id="quiz-game">
+            <div class="quiz-score">Рахунок: <span id="score">0</span>/10</div>
+            <div class="quiz-question">
+                <h3 id="question-text">Завантаження...</h3>
+                <div id="answers-container"></div>
+            </div>
+            <div class="quiz-result" id="quiz-result" style="display: none;">
+                <h3>Гра закінчена!</h3>
+                <p id="final-score"></p>
+                <button id="restart-quiz">Грати знову</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quiz Trigger Button -->
+<button id="quiz-trigger" class="quiz-btn">🎯Квиз команды</button><section id="team-action" class="team-action-section">
+    <div class="friend-punch-game">
+        <h2>айпаду труба</h2>
+        <div class="game-container">
+            <div class="friend-container">
+                <img id="friend-image" src="ipad.jpg" alt="Ваш друг">
+                <div id="effect-container"></div>
+                <div id="reaction-text"></div>
+            </div>
+            <div class="game-stats">
+                <div class="stat-block">
+                    <span>Счёт:</span>
+                    <span id="punch-count">0</span>
+                </div>
+                <div class="stat-block">
+                    <span>HP:</span>
+                    <div class="endurance-bar">
+                        <div id="endurance-progress"></div>
+                    </div>
+                </div>
+                <div class="stat-block">
+                    <span>Уровень:</span>
+                    <span id="game-level">новичок</span>
+                </div>
+            </div>
+            <div class="game-controls">
+                <button id="reset-game">Сначала</button>
+                <button id="super-punch">Удар со спины</button>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
